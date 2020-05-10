@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title property.title %}
+
+{% block body %}
+    <div class="container mt-4" xmlns:font-weight="http://www.w3.org/1999/xhtml"
+         xmlns:font-size="http://www.w3.org/1999/xhtml">
+        <div class="row">
+            <div class="col-md-8">
+
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                   <div class="card-title"></div>
+                   <div class="card-body">
+                       <h1>{{ property.title }}</h1>
+                       <h2>{{ property.rooms }} pieces. {{ property.surface }} m²</h2>
+                       <div class="text-primary"    style="font-weight: bold; font-Size:2rem;">
+                           {{ property.getFormatPrice }} fdj
+                       </div>
+                       <a href="#"  class="btn btn-primary mt-3">Contact-nous</a>
+                   </div>
+              </div>
+            </div>
+        </div>
+         <p class="badge badge-primary mt-3" style="font-weight: bold; font-Size:1rem;">{{ property.description | nl2br}}</p>
+        <div class="row">
+            <div class="col-md-8">
+                 <h1>Caracteristique</h1>
+                <table class="table table-hover">
+                        <tr>
+                            <td>Surface habitable</td>
+                            <td>{{ property.surface }}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Pieces</td>
+                            <td>{{ property.rooms }}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Chambre</td>
+                            <td>{{ property.bedrooms }}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Etage</td>
+                            <td>{{ property.floor }}</td>
+                        </tr>
+                        <tr>
+                            <td>Le type de chauffage</td>
+                            <td>{{ property.HEAT }}</td>
+                        </tr>
+                </table>
+            </div>
+            <div class="col-4">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
